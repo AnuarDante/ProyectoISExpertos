@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <Style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #myBtn{
+            text-align: center;
+            margin-top:45vh;
+            margin-bottom: 45vh;
+            border-radius: 5px;
+            width: 100px;
+            height:50px;
+            background-color: blue;
+        }
+    </Style>
+</head>
+<body>
+    <center>
+        <button id="myBtn">BOTON</button>
+    </center>
+    <script>
+        var tiempo, tiempoPres = 0;
+        var x = document.getElementById("myBtn");
+        if(x.addEventListener){
+        x.addEventListener("click", Click.bind(handleInteraction));
+        }
+        x.addEventListener('mousedown', handleInteraction);
+        x.addEventListener("dblclick", dbClick);
+        x.addEventListener("contextmenu", dClick);
+
+        function Click() {
+            console.log("Le has dado un click!")
+        }
+        
+        function dbClick() {
+            console.log("Le has dado dos click!")
+        }
+        function dClick() {
+            console.log("Le has dado click derecho!")
+        }    
+
+        function handleInteraction() {
+            console.log('Has mantenido presionado el Click')
+        }
+    </script>
+</body>
+</html>
